@@ -1,0 +1,26 @@
+                                    | ANOTAÇÕES ENUMS |
+      Enums são um conjuntos de objetos pré definidos,previamente criados imutáveis e disponível
+      para toda a aplicação.
+
+      Os enums NÃO são variaveis, eles deverão ser usado para objetos que irão sofrer
+      a menor quantidade de alterações possíveis.
+
+      EX: GRAU DE ESCOLARIDADE: Analfabeto,Fundamental,Médio,Superior
+          ESTADO CIVIL:  Solteiro,Casado,Divorciado,Viúvo
+          ESTADOS BRASILEIROS: São Paulo,Rio de Janeiro,Piauí,Maranhão
+
+      Veja que esses objetos são bem diretos em seu significado e não possuem necessidade de ficar tendo alterações
+
+
+      Outra forma de explicar seria: Pense em um enum como uma lista fechada de opções.
+
+       Por exemplo, imagine um formulário de papel perguntando:Qual é o seu estado civil?
+
+       Você não pode responder qualquer coisa. As opções são:
+       Solteiro
+       Casado
+       Divorciado
+       Viúvo
+
+       Seria estranho alguém responder: BATATA porque essas respostas não fazem sentido para a pergunta.
+       Um enum faz exatamente isso no programa: Ele cria uma lista de respostas permitidas.
