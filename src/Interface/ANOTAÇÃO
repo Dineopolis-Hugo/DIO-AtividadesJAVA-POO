@@ -1,0 +1,17 @@
+                                  INTERFACE
+
+         Na programação orientada a objetos (POO), interfaces são um nível maior de abstração.
+
+         A interface faz com que as classes que a implementam sejam obrigadas a possuir
+         os métodos que ela define (semelhante à abstração).
+
+         Com interfaces, consigo fazer uma espécie de "herança múltipla". Ou seja,
+         uma classe pode implementar várias interfaces ao mesmo tempo.
+
+         (A diferença entre abstração e interface é que uma classe só pode herdar/extender
+         uma única classe abstrata, mas pode implementar várias interfaces.)
+
+         O exemplo foi o EQUIPAMENTO MULTIFUNCIONAL. As funcionalidades de
+         COPIADORA, DIGITALIZADORA e IMPRESSORA foram definidas em interfaces.
+         O EquipamentoMultifuncional implementa essas interfaces e, assim,
+         consegue realizar as funções dos três equipamentos em uma única classe.
