@@ -98,6 +98,9 @@ public  class Conta {
         System.err.println("VALOR A PAGAR DO CHEQUE ESPECIAL " + (chequeEspecialUsado + (chequeEspecialUsado * 0.2)));
 
     }
+ private void validarSaldoInicial(){
+
+ }
 
     }
 

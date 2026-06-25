@@ -1,5 +1,6 @@
 package EXERCICIOS.BANCO_POO;
 
+import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -7,6 +8,7 @@ public class MainBanco {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         scanner.useLocale(Locale.US);
+try{
 
         boolean rodarMenu = true;
         String respMenu;
@@ -17,11 +19,14 @@ public class MainBanco {
         //CONSTRUTOR CLIENTE
         Cliente cliente = new Cliente();
             System.out.println("Digite seu nome: ");
-                cliente.setNome(scanner.next());
+                cliente.setNome(scanner.nextLine());
             System.out.println("digite seu cpf");
-                cliente.setCpf(scanner.next());
-            System.out.println("Digite seu Depósito inicial : ");
-                double saldoInicial = scanner.nextDouble();
+                cliente.setCpf(scanner.nextLine());
+                    System.out.println("Digite seu Depósito inicial : ");
+                    double saldoInicial = scanner.nextDouble();
+                    if (saldoInicial <= 0 ){
+                        throw new IllegalArgumentException("DEPOSITE UM VALOR VÁLIDO");
+                    }
 
         //CONSTRUTOR CONTA
         Conta conta01 = new Conta(cliente,saldoInicial);
@@ -40,7 +45,7 @@ public class MainBanco {
             opcao = scanner.nextInt();
 
 
-            switch (opcao){
+            switch (opcao) {
 
                 case 1:
                     conta01.consultaSaldo();
@@ -52,57 +57,56 @@ public class MainBanco {
                         rodarMenu = false;
 
                     }
-                        break;
+                    break;
                 case 2:
                     conta01.depositar();
                     System.out.println("Deseja voltar ao menu?[s/n]");
                     respMenu = scanner.next();
                     if (respMenu.equals("s")) {
                         break;
-                    }
-                    else if (respMenu.equals("n")) {
+                    } else if (respMenu.equals("n")) {
                         rodarMenu = false;
                     }
-                        break;
+                    break;
                 case 3:
                     conta01.sacar();
                     System.out.println("Deseja voltar ao menu?[s/n]");
                     respMenu = scanner.next();
                     if (respMenu.equals("s")) {
                         break;
-                    }
-                    else if (respMenu.equals("n")) {
+                    } else if (respMenu.equals("n")) {
                         rodarMenu = false;
                     }
-                        break;
+                    break;
                 case 4:
                     conta01.pagarBoleto();
                     System.out.println("Deseja voltar ao menu?[s/n]");
                     respMenu = scanner.next();
                     if (respMenu.equals("s")) {
                         break;
-                    }
-                    else if (respMenu.equals("n")) {
+                    } else if (respMenu.equals("n")) {
                         rodarMenu = false;
                     }
-                        break;
+                    break;
                 case 5:
                     conta01.verificarchequespecial();
                     System.out.println("Deseja voltar ao menu?[s/n]");
                     respMenu = scanner.next();
                     if (respMenu.equals("s")) {
                         break;
-                    }
-                    else if (respMenu.equals("n")) {
+                    } else if (respMenu.equals("n")) {
                         rodarMenu = false;
                     }
-                        break;
+                    break;
                 default:
                     System.err.println("OPÇÂO INVÁLIDA");
                     break;
 
             }
         }
+        }catch (InputMismatchException e){
+    System.err.println("DIGITE APENAS NÚMEROS");
+}
 
 
 
